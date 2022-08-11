@@ -43,10 +43,10 @@ jobs:
           arch: ppc64le
           distro: ${{matrix.distro}}
           run: |
+            ver=${{matrix.python-version}}
             if [[ ${{matrix.python-version}} == 2.7 ]]; then
-              apt-get update && apt-get install -y python2.7 python2.7-dev python-pip curl sudo git gcc g++ build-essential libssl-dev libffi-dev cargo
+              apt-get update && apt-get install -y python${ver} python${ver}-dev python-pip curl sudo git gcc g++ build-essential libssl-dev libffi-dev cargo
             elif [[ ${{matrix.python-version}} == 3.* ]]; then
-              ver=${{matrix.python-version}}
               apt-get update && apt-get install -y python${ver} python3-pip sudo curl git libssl-dev libffi-dev python${ver}-dev cargo 
               if [[ ${{matrix.python-version}} == '3.10' ]]; then
                 apt-get update && apt-get install -y python3-setuptools-rust
