@@ -2,7 +2,7 @@ name: "CodeQL"
 
 on:
   push:
-    branches: [ master, 0.9.x, 1.0.x, 1.1.x ]
+    branches: [ master, 0.9.x, 1.0.x, 1.1.x, graphite-carbon-s390x ]
   pull_request:
     # The branches below must be a subset of the branches above
     branches: [ master ]
